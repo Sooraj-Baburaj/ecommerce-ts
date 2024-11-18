@@ -1,11 +1,13 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "flowbite-react";
 
 import logodecorater from "../../assets/svgs/logo-decorater.svg";
 import Login from "../Login";
-import { RiSearchLine } from "react-icons/ri";
+import { RiHeart3Line, RiSearchLine } from "react-icons/ri";
+import { FaUserClock } from "react-icons/fa";
+import { HiOutlineShoppingCart } from "react-icons/hi";
 
 const Header = async () => {
   return (
@@ -34,9 +36,24 @@ const Header = async () => {
         </div>
         {/* Menu Links */}
         <div className="h-full flex">
-          <Login iconOnly />
+          <Suspense
+            fallback={
+              <Button color="transparent" size="sm">
+                <FaUserClock className="mr-2 h-4 w-4" />
+                <span>Authenticating</span>
+              </Button>
+            }
+          >
+            <Login iconOnly />
+          </Suspense>
           <Button color="transparent" size="md">
-            <RiSearchLine className="mr-2 h-4 w-4" />
+            <RiSearchLine className="mr-2 h-5 w-5" />
+          </Button>
+          <Button color="transparent" size="md">
+            <RiHeart3Line className="mr-2 h-5 w-5" />
+          </Button>
+          <Button color="transparent" size="md">
+            <HiOutlineShoppingCart className="mr-2 h-5 w-5" />
           </Button>
         </div>
       </div>

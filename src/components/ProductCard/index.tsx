@@ -11,7 +11,8 @@ interface ProductCardPropTypes {
 const ProductCard = ({ data }: ProductCardPropTypes) => {
   const originalPrice = useMemo(() => {
     return (100 / (100 - data.discountPercentage)) * data.price;
-  }, []);
+  }, [data.discountPercentage, data.price]);
+
   return (
     <Link href={`/shop/${data.id}`}>
       <div className="h-[478px] cursor-pointer">

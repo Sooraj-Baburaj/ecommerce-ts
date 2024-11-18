@@ -18,7 +18,7 @@ const LoginButton = ({ iconOnly, user }: LoginButtonPropTypes) => {
   return user ? (
     <Button color="transparent" size="md">
       {iconOnly ? (
-        <TbUserCheck className="mr-2 h-4 w-4" />
+        <TbUserCheck className="mr-2 h-5 w-5" />
       ) : (
         <>
           <FaUserCheck className="mr-2 h-4 w-4" />
@@ -30,7 +30,7 @@ const LoginButton = ({ iconOnly, user }: LoginButtonPropTypes) => {
     <>
       <Button color="transparent" size="sm" onClick={openModal}>
         {iconOnly ? (
-          <TbUserExclamation className="mr-2 h-4 w-4" />
+          <TbUserExclamation className="mr-2 h-5 w-5" />
         ) : (
           <>
             <FaUser className="mr-2 h-4 w-4" />

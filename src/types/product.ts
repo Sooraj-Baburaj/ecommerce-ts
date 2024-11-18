@@ -51,4 +51,5 @@ export interface ProductType {
   };
   images: string[];
   thumbnail: string;
+  error?: any;
 }
