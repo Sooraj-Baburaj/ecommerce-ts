@@ -18,29 +18,13 @@ export interface ProductType {
   warrantyInformation: string;
   shippingInformation: string;
   availabilityStatus: string;
-  reviews: [
-    {
-      rating: number;
-      comment: string;
-      date: string;
-      reviewerName: string;
-      reviewerEmail: string;
-    },
-    {
-      rating: number;
-      comment: string;
-      date: string;
-      reviewerName: string;
-      reviewerEmail: string;
-    },
-    {
-      rating: number;
-      comment: string;
-      date: string;
-      reviewerName: string;
-      reviewerEmail: string;
-    }
-  ];
+  reviews: {
+    rating: number;
+    comment: string;
+    date: string;
+    reviewerName: string;
+    reviewerEmail: string;
+  }[];
   returnPolicy: string;
   minimumOrderQuantity: number;
   meta: {
