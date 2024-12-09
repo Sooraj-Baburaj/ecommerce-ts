@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 
 import ProductDetail from "@/src/components/Product";
 
@@ -8,11 +8,7 @@ interface ProductDetailPagePropTypes {
 
 async function ProductDetailPage({ params }: ProductDetailPagePropTypes) {
   const { id } = await params;
-  return (
-    <Suspense fallback={<p>Loading...</p>}>
-      <ProductDetail id={id} />
-    </Suspense>
-  );
+  return <ProductDetail id={id} />;
 }
 
 export default ProductDetailPage;

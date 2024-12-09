@@ -17,7 +17,7 @@ const ProductDetail = async ({ id }: ProductDetailPropTypes) => {
   }
   return (
     <div>
-      <div className="px-[100px] py-9 bg-primary-10">
+      <div className="px-[100px] py-7 bg-primary-10">
         <Breadcrumbs
           breadcrumbs={[
             { href: "/", label: "Home" },

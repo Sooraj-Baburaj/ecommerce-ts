@@ -1,7 +1,9 @@
-import { ProductType } from "@/src/types/product";
-import { Button } from "flowbite-react";
 import React from "react";
+import { Button } from "flowbite-react";
 import { MdOutlineStarPurple500 } from "react-icons/md";
+
+import { ProductType } from "@/src/types/product";
+import { capitalizeFirstLetter } from "@/src/utils/functions/strings";
 
 const ProductDesciption = ({ data }: { data: ProductType }) => {
   const ratings = Math.ceil(data.rating);
@@ -52,20 +54,24 @@ const ProductDesciption = ({ data }: { data: ProductType }) => {
           </Button>
         </div>
       </div>
-      <ul>
-        <li>
-          <span className="min-w-10">SKU</span>: <span></span>
-        </li>
-        <li>
-          <span className="min-w-10">SKU</span>:<span></span>
-        </li>
-        <li>
-          <span className="min-w-10">SKU</span>:<span></span>
-        </li>
-        <li>
-          <span className="min-w-10">SKU</span>:<span></span>
-        </li>
-      </ul>
+      <div className=" py-7 text-[#9F9F9F] *:py-1 flex *:flex *:flex-col *:flex-1">
+        <div className="max-w-[100px]">
+          <span className="min-w-10">SKU</span>
+          <span className="min-w-10">Category</span>
+          <span className="min-w-10">Tags</span>
+        </div>
+        <div className="flex-grow-[2]">
+          <span>: {data.sku}</span>
+          <span className="capitalize">: {data.category}</span>
+          <span>
+            {`: ${data.tags.reduce(
+              (acc, curr, index) =>
+                `${acc}${index !== 0 ? "," : ""}${capitalizeFirstLetter(curr)}`,
+              ""
+            )}`}
+          </span>
+        </div>
+      </div>
     </div>
   );
 };
